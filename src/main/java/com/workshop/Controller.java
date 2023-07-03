@@ -19,6 +19,9 @@ public class Controller {
 	@Autowired
 	UserInfoService userServuce;
 	
+	@Autowired
+	TripService trips;
+	
 	
 	 @PostMapping("/check")
 	    public ResponseEntity<User> checkUser(@RequestBody User user) {
@@ -40,4 +43,14 @@ public class Controller {
 		 System.out.println(info.getName());
 		 userServuce.saveUserInfo(info);
 	 }
+	 
+	 
+	 @PostMapping("/TripInfo")
+	 public void trip(@RequestBody TripInfo trip) {
+		 System.out.println(trip);
+		 trips.ttripsave(trip);
+		
+	 }
+	 
+	 
 }
